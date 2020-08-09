@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+if [[ $EUID -ne 0 ]]; then
+    echo "[error] this script must be run as root"
+    exit 1
+fi

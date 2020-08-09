@@ -1,0 +1,48 @@
+#!/usr/bin/env bash
+
+#
+#; for loop code snippets
+#
+
+echo "range"
+for i in {1..4}; do
+    echo "  i: $i"
+done
+
+
+echo "range with prefix"
+for i in 0{1..4}; do # 01 02 03 04
+    echo "  i: $i"
+done
+
+
+echo "start..end..step"
+for i in {0..10..2}; do # start..end..step
+    echo "  i: $i"
+done
+
+
+echo "c-style"
+for (( i=1; i <=4; i++ )); do
+    echo "  i: $i"
+done
+
+
+arr=("foo" "bar" "baz")
+echo "array"
+for a in "${arr[@]}"; do
+    echo "  a: $a"
+done
+
+
+echo "command substitution"
+for b in "$(git branch)"; do
+    echo "  branch: $b"
+done
+
+
+echo "file selection"
+for f in /etc/*.conf; do
+    echo "  f: $f"
+done
+

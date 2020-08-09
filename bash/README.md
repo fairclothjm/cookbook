@@ -2,10 +2,15 @@
 
 Code snippets for bash scripts.
 
+ See [Bash Reference Manual](https://www.gnu.org/software/bash/manual/html_node/index.html).
+
 ## todo
 
 - multiline string
 - user input
-- check if sudo
 - if operators
 - regexes
+
+- looping constructs
+  - until
+  - while

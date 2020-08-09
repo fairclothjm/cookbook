@@ -4,6 +4,7 @@ import (
 	"errors"
 	"flag"
 	"fmt"
+	"os"
 	"strings"
 	"time"
 )
@@ -59,13 +60,23 @@ func init() {
 	flag.Var(&interval, "i", "interval (shorthand)")
 }
 
+func checkRequired() {
+	if name == "" {
+		fmt.Fprint(os.Stderr, "[error] name is required", "\nusage:\n")
+		flag.PrintDefaults()
+		os.Exit(1)
+	}
+}
+
 func main() {
-	fmt.Println("parse CLI flags with the flag package")
-
 	flag.Parse()
+	checkRequired()
 
+	fmt.Println("parse CLI flags with the flag package")
 	fmt.Printf("name: %s\tcount: %d\tfork: %v\tinterval: %v", name, count, fork, interval)
 
 	args := flag.Args()
-	fmt.Printf("\nargs not parsed as flags %v\n", args)
+	if len(args) > 0 {
+		fmt.Printf("\nargs not parsed as flags %v\n", args)
+	}
 }

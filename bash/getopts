@@ -8,7 +8,7 @@ NAME=""
 TIMES=1
 
 usage() {
-    echo "Usage: $0 [ -n NAME ] [ -t TIMES ]" 1>&2 
+    echo "usage: $0 [-h] [-n NAME] [-t TIMES]"
 }
 
 exit_arg_err() {
@@ -18,7 +18,7 @@ exit_arg_err() {
 
 # leading colon indicates silent error checking
 # trailing colon indicates option requires argument
-while getopts "hn:t:" opts; do 
+while getopts "hn:t:" opts; do
     case "${opts}" in
         h)
             usage
@@ -36,8 +36,8 @@ while getopts "hn:t:" opts; do
             echo "[error] -${OPTARG} requires an argument"
             exit_arg_err
             ;;
-        *)
-            echo "[error] unknown"
+        \?)
+            echo "[error] unknown option"
             exit_arg_err
             ;;
     esac

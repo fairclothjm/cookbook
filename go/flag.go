@@ -19,14 +19,14 @@ type timeInterval []time.Duration
 var interval timeInterval
 
 // String formats the interval's value.
-// Required for type interval to implement the flag.Value interface.
+// Required for type timeInterval to implement the flag.Value interface.
 func (i *timeInterval) String() string {
 	return fmt.Sprint(*i)
 }
 
 // Set sets the interval's value.
 // Set's argument is a string to be parsed to set the flag.
-// Required for type interval to implement the flag.Value interface.
+// Required for type timeInterval to implement the flag.Value interface.
 func (i *timeInterval) Set(value string) error {
 	if len(*i) > 0 {
 		return errors.New("interval flag already set")

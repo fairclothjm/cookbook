@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+#
+#; multiline string, it's too simple
+#
+
+__usage="
+Usage: $(basename $0) [OPTIONS]
+
+Options:
+  -l, --level <n>              Something something something level
+  -n, --nnnnn <levels>         Something something something n
+  -h, --help                   Something something something help
+  -v, --version                Something something something version
+"
+
+echo "$__usage"

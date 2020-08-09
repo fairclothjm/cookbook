@@ -1,0 +1,34 @@
+#!/usr/bin/env bash
+
+#
+#; if code snippets
+#
+
+# arithmetic
+# -eq, -ne, -lt, -le, -gt, -ge
+
+# string comparison
+# ==, !=, <, >
+
+nostr=""
+if [ -z $nostr ]; then
+    echo "string is unset"
+fi
+
+str="foo"
+if [ -n $str ]; then
+    echo "string is set"
+fi
+
+# logical operators
+# AND: [ expr -a expr ], OR: [ expr -o expr ], NOT: [ !expr ]
+
+# check file or dir exists: [ -e file_or_dir ]
+
+if [ -f ~/.vimrc ]; then
+    echo "file exists"
+fi
+
+if [ -d /etc ]; then
+    echo "dir exists"
+fi

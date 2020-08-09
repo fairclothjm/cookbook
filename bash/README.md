@@ -6,8 +6,6 @@ Code snippets for bash scripts.
 
 ## todo
 
-- multiline string
 - user input
-- if operators
 - regexes
 

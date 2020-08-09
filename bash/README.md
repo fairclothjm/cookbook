@@ -11,6 +11,3 @@ Code snippets for bash scripts.
 - if operators
 - regexes
 
-- looping constructs
-  - until
-  - while

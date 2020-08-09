@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+
+#
+#; color code snippet
+#
+
+if [[ -z $TERM ]]; then
+  TERM="xterm-256color"
+fi
+
+# https://unix.stackexchange.com/a/269085/400908
+echo "extended 256 colors (as used by setaf):"
+printf '\e[48;5;%dm ' {0..255}; printf '\e[0m \n'
+
+# format
+readonly reset="$(tput -T $TERM sgr0)"
+readonly bold="$(tput -T $TERM bold)"
+
+# colors
+readonly black="$(tput -T $TERM setaf 0)"
+readonly red="$(tput -T $TERM setaf 1)"
+readonly green="$(tput -T $TERM setaf 2)"
+readonly yellow="$(tput -T $TERM setaf 3)"
+readonly blue="$(tput -T $TERM setaf 4)"
+readonly purple="$(tput -T $TERM setaf 5)"
+readonly cyan="$(tput -T $TERM setaf 6)"
+readonly white="$(tput -T $TERM setaf 7)"
+
+# usage
+echo "${bold}[bold]${reset}"
+echo "${black}[black]${reset}"
+echo "${red}[red]${reset}"
+echo "${green}[green]${reset}"
+echo "${yellow}[yellow]${reset}"
+echo "${blue}[blue]${reset}"
+echo "${purple}[purple]${reset}"
+echo "${cyan}[cyan]${reset}"
+echo "${white}[white]${reset}"

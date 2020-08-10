@@ -1,3 +1,5 @@
+// code snippet of package flag for parsing cli args
+
 package main
 
 import (
@@ -73,7 +75,9 @@ func main() {
 	checkRequired()
 
 	fmt.Println("parse CLI flags with the flag package")
-	fmt.Printf("name: %s\tcount: %d\tfork: %v\tinterval: %v", name, count, fork, interval)
+	fmt.Printf(
+		"name: %s\tcount: %d\tfork: %v\tinterval: %v\n",
+		name, count, fork, interval)
 
 	args := flag.Args()
 	if len(args) > 0 {

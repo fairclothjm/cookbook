@@ -19,19 +19,19 @@ The top level dir is the root of the git repo. The sub dir, also called `mypacka
 
 In `__init__.py`:
 
-```
+```python
 from .hello import hello_world
 ```
 
 In `hello.py`:
 
-```
+```python
 def hello_world():
     return "hello world"
 ```
 
 
-```
+```python
 from setuptools import setup
 
 setup(name='mypackage',
@@ -53,7 +53,7 @@ pip install -e .
 
 Anywhere on the system, this should work:
 
-```
->>> import mypackage
->>> print(mypackage.hello_world())
+```python
+import mypackage
+print(mypackage.hello_world())
 ```

@@ -2,6 +2,13 @@
 
 Code snippets for C.
 
+## notes
+
+Build with:
+```
+gcc <file>.c -std=c99 -o <file>.out
+```
+
 
 ## todo
 

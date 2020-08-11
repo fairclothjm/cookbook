@@ -2,39 +2,39 @@
 
 ### create new module
 
-Make the current directory the root of a module
+Make the current directory the root of a module:
 ```
 go mod init example.com/hello
 ```
 
-List the current module and all its dependencies
+List the current module and all its dependencies:
 ```
 go list -m all
 ```
 
 ### module management
 
-Get a specific module version
+Get a specific module version:
 ```
 go get example.com/hello@v1.3.1
 ```
 
-Get a branch
+Get a branch:
 ```
 go get example.com/hello@<branch-name>
 ```
 
-Get a commit
+Get a commit:
 ```
 go get example.com/hello@<commit>
 ```
 
-Add missing and remove unused modules
+Add missing and remove unused modules:
 ```
 go mod tidy
 ```
 
-Explain why packages or modules are needed
+Explain why packages or modules are needed:
 ```
 go mod why -m <module-path>
 ```
@@ -48,12 +48,12 @@ Ref: [Defining Go Modules (Go & Versioning, Part 6)](https://research.swtch.com/
 
 #### usage
 
-Make a vendored copy of dependencies
+Make a vendored copy of dependencies:
 ```
 go mod vendor
 ```
 
-Build dependencies from the vendor directory
+Build dependencies from the vendor directory:
 ```
 go build -mod vendor
 ```

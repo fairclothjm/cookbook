@@ -1,0 +1,36 @@
+#!/usr/bin/env bash
+
+#
+#; array code snippets
+#
+
+# init array
+nums=(1 2 3)
+
+# create empty array
+declare -a nums2
+
+echo "all nums: ${nums[*]}" # * returns all items as a single word
+echo "all nums: ${nums[@]}" # @ returns each item as a separate word
+echo "nums indices: ${!nums[*]}" # print indices
+echo "nums length: ${#nums[*]}" # array length
+
+# append element
+nums+=(4)
+
+# concatenate two arrays
+nums2=(5 6 7)
+nums=("${nums[@]}" "${nums2[@]}")
+
+# process each element
+for  num in ${nums[@]}; do
+    echo "$num"
+done
+
+# delete last element
+len="${#nums[*]}"
+unset nums[$len-1]
+echo ${nums[*]}
+
+# delete all elements
+unset nums

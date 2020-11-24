@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+# read user input snippet
+
+# read input on same prompt
+read -p "Enter user name: " name
+
+# hide user input
+read -sp "Enter password: " password
+
+printf "\n\n"
+
+choices=("pizza" "beer" "all")
+echo "Choices:"
+printf "%s\n" "${choices[@]}"
+printf "\nMake selection: "
+
+# read in array
+read -a selection
+
+echo "$name wants ${selection[@]}"

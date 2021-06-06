@@ -2,10 +2,12 @@
 
 Code snippets for bash scripts.
 
- See [Bash Reference Manual](https://www.gnu.org/software/bash/manual/html_node/index.html).
+Reference
+- [Bash Reference Manual](https://www.gnu.org/software/bash/manual/html_node/index.html).
+- Google's [Shell Style Guide](https://google.github.io/styleguide/shellguide.html)
 
 ## todo
 
-- user input
-- regexes
+- common regex
+- shell substitution
 

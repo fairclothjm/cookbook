@@ -13,6 +13,10 @@ func main() {
 
 	// args are returned as a string
 	args := os.Args[1:]
+	if len(args) < 3 {
+		fmt.Println("3 args required: name, count, fork")
+		os.Exit(1)
+	}
 	fmt.Printf("\nargs: %v\n", args)
 
 	name := args[0]

@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+var="pattern1"
+
+case $var in
+  pattern1|pattern2)
+    echo "pattern1 or pattern2"
+    ;;
+  *)
+    echo "unknown pattern"
+    ;;
+esac

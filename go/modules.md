@@ -1,6 +1,6 @@
-# go modules
+# Go modules
 
-### create new module
+### Create new module
 
 Make the current directory the root of a module:
 ```
@@ -12,7 +12,7 @@ List the current module and all its dependencies:
 go list -m all
 ```
 
-### module management
+### Module management
 
 Get a specific module version:
 ```
@@ -39,14 +39,18 @@ Explain why packages or modules are needed:
 go mod why -m <module-path>
 ```
 
-### vendor dependencies
+### Vendor dependencies
 
-#### what is a vendor dir?
-> Vendor directories serve two purposes. First, they specify by their contents the exact version of the dependencies to use during gobuild. Second, they ensure the availability of those dependencies, even if the original copies disappear. On the other hand, vendor directories are also difficult to manage and bloat the repositories in which they appear.
+#### What is a vendor dir?
+> Vendor directories serve two purposes. First, they specify by their contents
+> the exact version of the dependencies to use during gobuild. Second, they
+> ensure the availability of those dependencies, even if the original copies
+> disappear. On the other hand, vendor directories are also difficult to manage
+> and bloat the repositories in which they appear.
 
 Ref: [Defining Go Modules (Go & Versioning, Part 6)](https://research.swtch.com/vgo-module)
 
-#### usage
+#### Usage
 
 Make a vendored copy of dependencies:
 ```

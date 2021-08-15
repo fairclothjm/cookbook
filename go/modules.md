@@ -2,7 +2,7 @@
 
 ## Contents
 - [Create a new module](#create-a-new-module)
-- [Module management](#module-management)
+- [Module management basics](#module-management-basics)
 - [Import a local package](#import-a-local-package)
 - [Vendor dependencies](#vendor-dependencies)
 
@@ -18,7 +18,7 @@ List the current module and all its dependencies:
 go list -m all
 ```
 
-### Module management
+### Module management basics
 
 Get a specific module version:
 ```
@@ -75,7 +75,8 @@ The projects should both contain `go.mod` files:
 2 directories, 4 files
  ```
 
-Next, we need to manually update the `school` project's `go.mod` file:
+Next, we need to manually update the `school` project's `go.mod` file using the
+[replace directive](https://golang.org/ref/mod#go-mod-file-replace)
 ```
 module school
 
@@ -92,7 +93,7 @@ main.go:6:2: module sample.com/math provides package sample.com/math and is repl
 	go get sample.com/math
 ```
 
-The final step is to run `go mod tidy` which will find the local package:
+The final step is to run [go mod tidy](https://golang.org/ref/mod#go-mod-tidy) which will find the local package:
  ```
 ~/code/go/module-test/school  v $ go mod tidy
 go: found sample.com/math in sample.com/math v0.0.0-00010101000000-000000000000

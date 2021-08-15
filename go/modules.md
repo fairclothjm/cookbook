@@ -52,6 +52,7 @@ You have a local package `sample.com/math` that does not exist in a remote repo
 that you would like to import into your `school` project. How can we accomplish
 this?
 
+#### Solution
 First you must initialize the modules of each project:
 ```
 # in the math dir
@@ -76,7 +77,8 @@ The projects should both contain `go.mod` files:
  ```
 
 Next, we need to manually update the `school` project's `go.mod` file using the
-[replace directive](https://golang.org/ref/mod#go-mod-file-replace)
+[replace directive](https://golang.org/ref/mod#go-mod-file-replace) and a
+relative path:
 ```
 module school
 
@@ -99,7 +101,7 @@ The final step is to run [go mod tidy](https://golang.org/ref/mod#go-mod-tidy) w
 go: found sample.com/math in sample.com/math v0.0.0-00010101000000-000000000000
  ```
 
-Finally, we can successfully import the local package:
+Finally, we can successfully import the local package and run:
 ```
 ~/code/go/module-test/school  $ go run main.go
 6

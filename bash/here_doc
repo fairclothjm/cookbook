@@ -1,0 +1,70 @@
+#!/usr/bin/env bash
+
+# Here documents
+
+#          <<[-]word
+#                  here-document
+#          delimiter
+
+
+# write file with dynamic file name
+filename="policy1"
+cat > ${filename}.hcl <<EOF
+path "foo/bar" {
+  capabilities = ["read"]
+}
+EOF
+
+set -x
+cat policy1.hcl
+set +x
+
+# write file with dynamic content
+capability="read"
+cat > policy2.hcl <<EOF
+path "foo/bar" {
+  capabilities = ["${capability}"]
+}
+EOF
+
+# append to file
+cat >> policy2.hcl <<EOF
+[appended content]
+EOF
+
+# the order of "here-tag" and filename can be switched
+cat <<EOF >> policy2.hcl
+[appended content 2]
+EOF
+
+set -x
+cat policy2.hcl
+set +x
+
+# strip leading tabs with <<-EOF
+cat <<-EOF >> policy3.hcl
+		tabs should be stripped
+EOF
+
+set -x
+cat policy3.hcl
+set +x
+
+# write to a variable
+my_var=$(cat <<EOF
+path "foo/bar" {
+  capabilities = ["read"]
+}
+EOF
+)
+
+# pass multi-line string to a pipe
+cat <<EOF | grep 'b' | tee b.txt
+foo
+bar
+baz
+EOF
+
+
+# clean up
+rm *.hcl b.txt

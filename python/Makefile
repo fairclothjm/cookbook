@@ -13,7 +13,7 @@ run:
 	. .venv/bin/activate; python3 main.py
 
 clean:
-	rm -rf .venv
+	rm -rf .venv __pycache__
 
 
 .PHONY: install clean run

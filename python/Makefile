@@ -4,6 +4,8 @@
 #
 # See https://docs.python.org/3/library/venv.html)
 
+.DEFAULT_GOAL := run
+
 install:
 	@command -v python3 >/dev/null 2>&1 || { echo >&2 "Python 3 is required"; exit 1; }
 	[ -d ".venv" ] || python3 -m venv .venv

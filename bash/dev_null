@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+# stdin  ==> fd 0
+# stdout ==> fd 1
+# stderr ==> fd 2
+
+
+# the following commands all send stdout and stderr to /dev/null
+
+# explicit
+rm nonexisting.txt 1> /dev/null 2> /dev/null
+
+# fd 1 is the default stdout, so it can be ommited
+rm nonexisting.txt > /dev/null 2> /dev/null
+
+# use a file descriptor duplication (>& 1) since /dev/null is already pointed
+# to by stdout 1
+rm nonexisting.txt 1> /dev/null 2>& 1
+
+# shortened form of the common operation
+rm nonexisting.txt &> /dev/null

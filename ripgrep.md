@@ -3,7 +3,7 @@
 | Flag    | Description |
 | -------- | ------- |
 | -I  | suppress file path |
-| -N  | suppress file num |
+| -N  | suppress line num |
 | -l  | Only show file names    |
 | --files-without-match | Only show non-matching file names     |
 | -v    | show lines that do not match    |
